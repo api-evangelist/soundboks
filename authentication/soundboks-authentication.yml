@@ -1,0 +1,42 @@
+generated: '2026-07-21'
+method: searched
+source: https://soundboks.com/.well-known/openid-configuration
+docs: https://shopify.dev/docs/api/customer
+note: >-
+  Auth profile derived from the live OIDC/OAuth discovery documents on the
+  soundboks.com store domain. This is the Shopify Customer Accounts platform
+  (issuer https://shopify.com/authentication/6044516441) configured for Soundboks,
+  not a Soundboks-authored API. No first-party developer API is published.
+summary:
+  types:
+  - openIdConnect
+  - oauth2
+  oauth2_flows:
+  - authorizationCode
+  pkce: S256
+  token_endpoint_auth_methods:
+  - client_secret_basic
+schemes:
+- name: openIdConnect
+  type: openIdConnect
+  issuer: https://shopify.com/authentication/6044516441
+  openIdConnectUrl: https://soundboks.com/.well-known/openid-configuration
+  id_token_signing_alg: RS256
+  sources:
+  - well-known/soundboks-openid-configuration.json
+- name: oauth2
+  type: oauth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://us-account.soundboks.com/authentication/oauth/authorize
+    tokenUrl: https://us-account.soundboks.com/authentication/oauth/token
+    endSessionUrl: https://us-account.soundboks.com/authentication/logout
+    jwksUrl: https://us-account.soundboks.com/authentication/.well-known/jwks.json
+    codeChallengeMethods:
+    - S256
+    grantTypes:
+    - authorization_code
+    - refresh_token
+    - 'urn:ietf:params:oauth:grant-type:jwt-bearer'
+  sources:
+  - well-known/soundboks-oauth-authorization-server.json

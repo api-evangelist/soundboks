@@ -1,0 +1,23 @@
+generated: '2026-07-21'
+method: searched
+source: https://soundboks.com/.well-known/
+host: https://soundboks.com
+note: >-
+  soundboks.com is a Shopify-hosted storefront. The openid-configuration and
+  oauth-authorization-server documents are served by the Shopify Customer Accounts
+  platform (issuer https://shopify.com/authentication/6044516441) with OAuth/OIDC
+  endpoints on us-account.soundboks.com. No security.txt, api-catalog, or ai-plugin
+  document is published.
+documents:
+- path: /.well-known/openid-configuration
+  status: 200
+  file: soundboks-openid-configuration.json
+- path: /.well-known/oauth-authorization-server
+  status: 200
+  file: soundboks-oauth-authorization-server.json
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404

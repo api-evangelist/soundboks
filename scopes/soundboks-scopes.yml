@@ -1,0 +1,40 @@
+generated: '2026-07-21'
+method: searched
+source: https://soundboks.com/.well-known/openid-configuration
+docs: https://shopify.dev/docs/api/customer
+note: >-
+  scopes_supported taken verbatim from the live OIDC discovery document on
+  soundboks.com. These are Shopify Customer Accounts platform scopes, not
+  Soundboks-authored scopes.
+schemes:
+- name: oauth2
+  source: well-known/soundboks-openid-configuration.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://us-account.soundboks.com/authentication/oauth/authorize
+    tokenUrl: https://us-account.soundboks.com/authentication/oauth/token
+scopes:
+- scope: openid
+  description: OpenID Connect authentication; issue an ID token identifying the customer.
+  flows:
+  - authorizationCode
+  sources:
+  - well-known/soundboks-openid-configuration.json
+- scope: email
+  description: Access the customer's email address and email_verified claim.
+  flows:
+  - authorizationCode
+  sources:
+  - well-known/soundboks-openid-configuration.json
+- scope: customer-account-api:full
+  description: Full access to the Shopify Customer Account API on behalf of the signed-in customer.
+  flows:
+  - authorizationCode
+  sources:
+  - well-known/soundboks-openid-configuration.json
+- scope: customer-account-mcp-api:full
+  description: Full access to the Shopify Customer Account MCP API surface for the signed-in customer.
+  flows:
+  - authorizationCode
+  sources:
+  - well-known/soundboks-openid-configuration.json

@@ -1,7 +1,28 @@
 aid: soundboks
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/soundboks.png
 name: Soundboks
-description: Soundboks is a company surfaced as a portfolio company of y-combinator and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Soundboks is a Danish consumer-electronics company that designs and manufactures
+  loud, durable, battery-powered Bluetooth party speakers (Soundboks 4, Soundboks
+  Mix) plus companion products such as Lightboks party lights. Products are sold
+  direct-to-consumer through a Shopify-powered storefront and controlled with a
+  companion iOS/Android app that supports wireless playback and multi-speaker
+  pairing (TeamUp). Soundboks does not publish a first-party developer API or SDK;
+  its only programmatic surface is the Shopify Customer Account API (OAuth 2.0 /
+  OpenID Connect) exposed on its own store domain via the standard Shopify
+  discovery documents, which is what this enrichment pass captured.
 url: https://raw.githubusercontent.com/api-evangelist/soundboks/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,12 +32,60 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
-apis: []
+- Consumer Electronics
+- Audio
+- Bluetooth Speakers
+- Hardware
+- E-commerce
+- Shopify
+- Direct-to-Consumer
+apis:
+- name: Soundboks Customer Account API (Shopify)
+  description: >-
+    OAuth 2.0 / OpenID Connect customer-account surface exposed on the soundboks.com
+    store domain by the Shopify Customer Accounts platform. Discovered via the
+    standard /.well-known/openid-configuration and /.well-known/oauth-authorization-server
+    documents. Not a Soundboks-authored API — it is Shopify platform infrastructure
+    configured for the Soundboks store (issuer https://shopify.com/authentication/6044516441).
+  humanURL: https://shopify.dev/docs/api/customer
+  baseURL: https://us-account.soundboks.com/authentication
+  tags:
+  - OAuth
+  - OpenID Connect
+  - Customer Account
+  - Shopify
+  properties:
+  - type: Authentication
+    url: authentication/soundboks-authentication.yml
+  - type: OAuthScopes
+    url: scopes/soundboks-scopes.yml
+common:
+- type: Website
+  url: https://soundboks.com
+- type: Support
+  url: https://soundboks.com/pages/help
+- type: TermsOfService
+  url: https://soundboks.com/policies/terms-of-service
+- type: PrivacyPolicy
+  url: https://soundboks.com/policies/privacy-policy
+- type: WellKnown
+  url: well-known/soundboks-well-known.yml
+- type: Authentication
+  url: authentication/soundboks-authentication.yml
+- type: OAuthScopes
+  url: scopes/soundboks-scopes.yml
+- type: DomainSecurity
+  url: security/soundboks-domain-security.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-21'
+  status: minimal
+  artifacts_added: 6
+  pass: local-v1
