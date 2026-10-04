@@ -87,6 +87,9 @@ apis:
     url: authentication/soundboks-authentication.yml
   - type: OAuthScopes
     url: scopes/soundboks-scopes.yml
+  x-surface: platform-generated
+  x-platform: shopify
+  x-platform-surface: customer-account
 common:
 - type: Website
   url: https://soundboks.com
