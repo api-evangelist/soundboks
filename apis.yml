@@ -43,7 +43,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-07-21'
+modified: '2026-10-06'
 tags:
 - Company
 - Consumer Electronics
@@ -91,6 +91,10 @@ apis:
   x-platform: shopify
   x-platform-surface: customer-account
 common:
+- url: https://soundboks.com/blogs/in-tune
+  type: Blog
+- url: https://soundboks.com/blogs/in-tune.atom
+  type: BlogRSS
 - type: Website
   url: https://soundboks.com
 - type: Support
